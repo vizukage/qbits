@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Complete your Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label fixed>Full Name</ion-label>
+    <ion-input type="text" value="" [(ngModel)]="profileData.fullname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+  <ion-label>Gender</ion-label>
+  <ion-select [(ngModel)]="profileData.gender">
+    <ion-option value="f">Female</ion-option>
+    <ion-option value="m">Male</ion-option>
+  </ion-select>
+</ion-item>
+
+  <ion-item>
+    <ion-label>Date of Birth</ion-label>
+    <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="profileData.dob"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Place</ion-label>
+    <ion-input type="text" [(ngModel)]="profileData.place"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Blood Group</ion-label>
+    <ion-input type="text" [(ngModel)]="profileData.blood"></ion-input>
+  </ion-item>
+
+    <button ion-button full color="success" (click)="submit()">Submit</button>
+
+
+
+</ion-list>
+
+</ion-content>

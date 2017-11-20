@@ -1,0 +1,63 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Appointments</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Select Department</ion-label>
+      <ion-select [(ngModel)]="bookData.dept">
+        <ion-option value="emer">Emergency</ion-option>
+        <ion-option value="opth">Opthalmology</ion-option>
+        <ion-option value="ortho">Orthopaedics</ion-option>
+        <ion-option value="surg">Surgical Clinic</ion-option>
+        <ion-option value="gynec">Gynaecology</ion-option>
+        <ion-option value="ent">ENT</ion-option>
+        <ion-option value="neuro">Neurology</ion-option>
+        <ion-option value="patho">Pathology</ion-option>
+        <ion-option value="derma">Dermatology</ion-option>
+        <ion-option value="physio">PhysioTherapy</ion-option>
+        <ion-option value="lab">Laboratory</ion-option>
+        <ion-option value="pharm">Pharmacy</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+    <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY"  min="2017" max="2018" [(ngModel)]="bookData.date">
+      </ion-datetime>
+    </ion-item>
+    <ion-item>
+    <button ion-button full round (click)="docSelect()">Fetch Available doctors list</button>
+    </ion-item>
+
+    <ion-item>
+       <ion-label>Choose Prefered doctor</ion-label>
+       <ion-select type="text" [(ngModel)]="bookData.doc_id">
+         <ion-option *ngFor="let docs of docList" value="{{docs.doc_id}}">
+           {{docs.name}}
+         </ion-option>
+       </ion-select>
+     </ion-item>
+
+  </ion-list>
+    <button ion-button full color="success" (click)="book()">Book</button>
+</ion-content>
+
+
+<!--
+<ion-item no-lines>
+   <ion-label>Project Name</ion-label>
+   <ion-select type="text" [(ngModel)]="_projectName">
+     <ion-option *ngFor="let p of projectDetails" value="{{p.projectName}}">
+       {{p.projectName}}
+     </ion-option>
+   </ion-select>
+ </ion-item>
+-->

@@ -1,0 +1,46 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Appointments</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding color="dark">
+
+  <ion-card *ngFor="let item of appData" color="color1">
+    <ion-card-header>
+        <h2><b>{{item.date}}</b></h2><br>
+        <h3 *ngIf="item.dept == 'emer'">Emergency</h3>
+        <h3 *ngIf="item.dept == 'opth'">Opthalmology</h3>
+        <h3 *ngIf="item.dept == 'ortho'">Orthopaedic</h3>
+        <h3 *ngIf="item.dept == 'surg'">Surgical Clinic</h3>
+        <h3 *ngIf="item.dept == 'gynec'">Gynaecology</h3>
+        <h3 *ngIf="item.dept == 'ent'">ENT</h3>
+        <h3 *ngIf="item.dept == 'neuro'">Neurology</h3>
+        <h3 *ngIf="item.dept == 'patho'">Pathology</h3>
+        <h3 *ngIf="item.dept == 'derma'">Dermatology</h3>
+        <h3 *ngIf="item.dept == 'physio'">PhysioTherapy</h3>
+        <h3 *ngIf="item.dept == 'lab'">Laboratory</h3>
+        <h3 *ngIf="item.dept == 'pharm'">Pharmacy</h3>
+
+
+    </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+    Appointment with <b> {{item.name}} </b>
+    <br>
+
+    <button ion-item (click)="cancel(item.app_id)" color="primary">
+      <ion-icon name="trash" item-start></ion-icon>
+      Cancel
+    </button>
+  </ion-list>
+
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

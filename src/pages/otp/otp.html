@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      Verify Account
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card-content>
+    <h2>Verify OTP send to your mobile number</h2>
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Enter OTP</ion-label>
+        <ion-input type="number" [(ngModel)]="otpData.otp"></ion-input>
+      </ion-item>
+
+
+      <button ion-button full color="success" (click)="otp()">Verify</button>
+
+    </ion-list>
+  </ion-card-content>
+
+
+
+</ion-content>

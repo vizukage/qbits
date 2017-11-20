@@ -1,0 +1,27 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="login">
+<ion-list id="list">
+<br><br><br>
+  <ion-item>
+    <ion-label fixed>Mobile: +91</ion-label>
+    <ion-input type="number" value="" [(ngModel)]="userData.mobile"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+  </ion-item>
+<br><br><br>
+  <button ion-button block color="primary" (click)="login()">Login</button>
+
+</ion-list>
+</ion-content>
